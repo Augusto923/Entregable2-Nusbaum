@@ -1,0 +1,266 @@
+/*
+Colores de la página web
+Color 1: #568afa Celeste
+Color 2: #0051ff Azul 
+Color 3: #5c6b66 Verde Grisaceo
+Color 4: #2e464d Gris Oscuro
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.navbar{
+    background-color: #fff;
+    height: 80px;
+    margin: 40px;
+    border-radius: 16px;
+    padding: 0.5rem 2.5rem;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: 500;
+    color: #43ab34;
+    transition: 0.3s color;
+}
+
+.navbar-brand img{
+    padding: 0;
+    margin: 15px;
+}
+
+.login-button {
+    background-color: #568afa;
+    color: #fff;
+    font-size: 20px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+
+.login-button:hover {
+    background-color: #296bf8
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus,
+.btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #636363;
+    font-weight: 500;
+    position: relative;
+    font-size: 24px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #000000;
+}
+
+@media (min-width: 991px) {
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0%;
+        height: 2px;
+        background-color: #296bf8;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before,
+    .nav-link.active::before {
+        width: 100%;
+        visibility: visible;
+    }
+
+}
+
+.section-new {
+    background: url(../assets/Background.jpg) no-repeat center;
+    background-size: cover;
+    width: 100%;
+    
+}
+
+
+.section-new::before {
+    background-color: rgba(0, 0, 0, 0.63);
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+
+.section-new .container {
+    height: 100vh;
+    z-index: 1;
+    position: relative;
+}
+
+.section-new h1 {
+    font-size: 3.5em;
+}
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.container h1{
+    font-weight: 600;
+    border-bottom:#fff 2px solid;
+    color: #568afa;
+}
+
+.button-agregar {
+    background-color: #568afa;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+
+.button-agregar:hover {
+    background-color: #296bf8;
+}
+
+.note {
+    padding: 5px 50px;
+    text-align: center;
+    font-size: 20px;
+    background-color: #474545; /*Background "Escribe tu tarea aquí" :) */
+}
+
+.note::placeholder {
+    color: #ffffff;
+}
+
+/*Caja de tareas*/
+.tareas-box {
+    width: 60%;
+    max-width: 500px;
+    background-color: #ffffff; /* Color de la caja :) */
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 4px 4px 4px #568afa;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.tareas-box h1 {
+    font-size: 2.5em;
+    color: #568afa; /* Color del titulo :)*/
+    margin-bottom: 20px;
+    border-bottom: 2px solid #568afa;
+    padding-bottom: 10px;
+}
+
+.tareas-box input {
+    width: calc(100% - 40px);
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #d3d3d3; /* Color del borde - texto input :) */
+    border-radius: 8px;
+}
+
+.tareas-box .button-agregar {
+    background-color: #568afa;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tareas-box .button-agregar:hover {
+    background-color: #296bf8;
+}
+
+#tareasList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Ajustes en las tareas */
+#taskList li {
+    background-color: #cfcfcf; /* Background de las tareas agregadas :) */
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    color: #000000;
+    text-align: left;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    /* Desbordamiento */
+    word-wrap: break-word;
+    overflow: auto;
+    max-height: 100px;
+}
+
+#taskList li::-webkit-scrollbar {
+    width: 8px;
+}
+
+#taskList li::-webkit-scrollbar-thumb {
+    background: #568afa; /* Color del scrollbar :) */
+    border-radius: 8px;
+}
+
+#taskList li:hover {
+    background-color: #e0e0e0; /* Hover de las tareas agregadas :) */
+}
+
+.tareas-box .remove-btn {
+    background-color: #ff3b3b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.tareas-box .remove-btn:hover {
+    background-color: #eb1c1c;
+}
+
+/*  tareas completadas */
+.completed {
+    text-decoration: line-through;
+    color: #ff0000;
+}
+
